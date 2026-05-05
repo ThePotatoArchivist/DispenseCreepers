@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "dispensecreepers",
 	"version": "${version}",
-	"name": "DispenseCreepers",
+	"name": "You May Dispense with the Creepers",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
