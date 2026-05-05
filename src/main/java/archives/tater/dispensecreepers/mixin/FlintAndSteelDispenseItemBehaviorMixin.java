@@ -29,9 +29,13 @@ public class FlintAndSteelDispenseItemBehaviorMixin {
     private void tryIgniteCreeper(@Coerce OptionalDispenseItemBehavior instance, boolean success, Operation<Void> original, final BlockSource source, final ItemStack dispensed) {
         if (success) return;
 
-        for (var creeper : source.level().getEntitiesOfClass(Creeper.class, new AABB(source.pos().relative(source.state().getValue(DispenserBlock.FACING))), EntitySelector.NO_SPECTATORS)) {
+        for (var creeper : source.level().getEntitiesOfClass(
+                Creeper.class,
+                new AABB(source.pos().relative(source.state().getValue(DispenserBlock.FACING))),
+                EntitySelector.NO_SPECTATORS
+        )) {
             if (creeper.isIgnited()) continue;
-            source.level().playSound(null, creeper.getX(), creeper.getY(), creeper.getZ(), SoundEvents.FLINTANDSTEEL_USE, creeper.getSoundSource(), 1.0F, creeper.getRandom().nextFloat() * 0.4F + 0.8F);
+            creeper.playSound(SoundEvents.FLINTANDSTEEL_USE, 1, creeper.getRandom().nextFloat() * 0.4f + 0.8f);
             creeper.ignite();
             original.call(instance, true);
             return;
