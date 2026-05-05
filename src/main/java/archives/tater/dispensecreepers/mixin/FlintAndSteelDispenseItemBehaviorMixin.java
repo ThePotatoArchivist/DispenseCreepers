@@ -34,7 +34,7 @@ public class FlintAndSteelDispenseItemBehaviorMixin {
             source.level().playSound(null, creeper.getX(), creeper.getY(), creeper.getZ(), SoundEvents.FLINTANDSTEEL_USE, creeper.getSoundSource(), 1.0F, creeper.getRandom().nextFloat() * 0.4F + 0.8F);
             creeper.ignite();
             original.call(instance, true);
-            break;
+            return;
         }
 
         original.call(instance, false);
