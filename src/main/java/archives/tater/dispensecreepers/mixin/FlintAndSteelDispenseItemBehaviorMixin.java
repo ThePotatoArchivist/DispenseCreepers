@@ -19,6 +19,7 @@ import net.minecraft.world.phys.AABB;
 
 @Mixin(targets = "net.minecraft.core.dispenser.DispenseItemBehavior$5")
 public class FlintAndSteelDispenseItemBehaviorMixin {
+    @SuppressWarnings("InvalidInjectorMethodSignature") // gets mad at the coerce for some reason
     @Definition(id = "setSuccess", method = "Lnet/minecraft/core/dispenser/DispenseItemBehavior$5;setSuccess(Z)V")
     @Expression("?.setSuccess(false)")
     @WrapOperation(

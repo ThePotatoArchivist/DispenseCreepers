@@ -14,11 +14,7 @@
 	"license": "CC0-1.0",
 	"icon": "assets/dispensecreepers/icon.png",
 	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"archives.tater.dispensecreepers.DispenseCreepers"
-		]
-	},
+	"entrypoints": {},
 	"mixins": [
 		"dispensecreepers.mixins.json"
 	],
